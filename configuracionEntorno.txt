@@ -1,0 +1,63 @@
+instalacion y configuracion de entorno
+-inicializar git
+    *git init
+-inicializar proyecto 
+    *npm init -y
+-estructura basica del proyecto
+    ->public (directorio)
+        ->index.html
+    ->src (directorio)
+        ->assets (directorio)
+            ->stryles (directorio)
+                ->App.scss
+        ->components (directorio)
+        ->index.js
+-instalar react
+    *npm install react react-dom 
+        o
+    *npm install --save react react-dom
+-instalar babel //crea compatiblidad de javastrip con todos los navegadores
+    npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
+    -agregar el archivo .babelrc
+    -agregar las configuracion en el archivo
+        {
+            "presets": [
+                "@babel/preset-env",/*sirve para trabajar con enma excrip 5 y 6*/
+                "@babel/preset-react",/*sirve para trabajar con JSX y react*/
+            ]
+        }
+-instalar webpack //sirve  para configurar los archivo para produccion o para un entorno local
+    *npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev
+    -crear el archivo webpack.config.js en la raiz del proyecto //aqui se configura webpack
+    -agregar en package.json -> scrips
+        "build": "webpack --mode production",
+    -ejecutar compilacion
+        npm run build
+-instalar webpack server para ver los cambio en tiempo real
+    *npm install --save-dev webpack-dev-server
+        -agregar en package.json -> scrips
+            "start": "webpack-dev-server --open --mode development"
+        -ejecuar server
+            npm run start
+-instalas SASS para hoja de estilos css
+    *npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader
+    -agregar nueva regla para los css
+        {
+            test: /\.(s*)css$/,
+            use: [
+                { loader: MiniCssExtractPlugin.loader },
+                'css-loader',
+                'sass-loader',
+            ],
+        },
+    -agregar plugin
+        const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+    -agregar plugins 
+        new MiniCssExtractPlugin({
+            filename: 'assets/[name].css',
+        }),
+-instalar ESLint y gti ignore
+    *npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+    -crear archivo .eslint en la raiz del proyecto
+        pegar el contedino del archivo https://gist.githubusercontent.com/gndx/60ae8b1807263e3a55f790ed17c4c57a/raw/0de495fc84df71ce97ef87c37505362f3512e1c3/eslintrc
+        
