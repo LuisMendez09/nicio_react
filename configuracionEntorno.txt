@@ -60,8 +60,5 @@ instalacion y configuracion de entorno
     *npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
     -crear archivo .eslint en la raiz del proyecto
         pegar el contedino del archivo https://gist.githubusercontent.com/gndx/60ae8b1807263e3a55f790ed17c4c57a/raw/0de495fc84df71ce97ef87c37505362f3512e1c3/eslintrc
-        
 
-
-
-modificacion
+omasssssssss
