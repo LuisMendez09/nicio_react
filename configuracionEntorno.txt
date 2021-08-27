@@ -61,4 +61,15 @@ instalacion y configuracion de entorno
     -crear archivo .eslint en la raiz del proyecto
         pegar el contedino del archivo https://gist.githubusercontent.com/gndx/60ae8b1807263e3a55f790ed17c4c57a/raw/0de495fc84df71ce97ef87c37505362f3512e1c3/eslintrc
 
-omasssssssss
+-configurar arichivos de images con webpack
+    *npm install file-loarder --save -dev
+    --modificar webpack.config -> rules
+        {
+        test: /\.(png|gif|jpg)$/,
+        use: [
+        {
+            loader: 'file-loader',
+            options: { name: 'assets/[hash].[ext]' },
+        }
+        ],
+    },
